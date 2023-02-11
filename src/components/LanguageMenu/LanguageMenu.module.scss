@@ -1,0 +1,136 @@
+@import "../../colors";
+.dropDownMenu {
+  @media only screen and (max-width: 1200px) {
+    display: none;
+  }
+  position: relative;
+  text-transform: capitalize;
+  .currentLanguage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline-end: 40px;
+    color: $grey;
+    gap: 7px;
+    cursor: pointer;
+    p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: bold;
+    }
+    svg {
+      margin-top: 4px;
+    }
+    &:hover,
+    &[is-expanded="true"] {
+      p {
+        color: $red;
+      }
+      svg {
+        path {
+          fill: $red;
+        }
+        &[direction="rtl"] {
+          transform: rotate(90deg);
+        }
+        &[direction="ltr"] {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+  }
+  .languageList {
+    &[is-expanded="false"] {
+      display: none;
+    }
+    &[dir="rtl"] {
+      left: 40px;
+    }
+    list-style: none;
+    position: absolute;
+    background-color: $background;
+    width: max-content;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 0;
+    margin-top: 6px;
+    box-shadow: 0 3px 6px -4px rgb(0 0 0 / 12%), 0 6px 16px 0 rgb(0 0 0 / 8%),
+      0 9px 28px 8px rgb(0 0 0 / 5%);
+    li {
+      padding: 5px 12px;
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: normal;
+      cursor: pointer;
+      &:hover {
+        background-color: #f5f5f5;
+      }
+    }
+  }
+}
+.hamburgerMenu {
+  @media only screen and (min-width: 1201px) {
+    display: none;
+  }
+  width: 22px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  &[is-expanded="true"] {
+    div:first-child {
+      transform: rotate(45deg);
+      transform-origin: 0;
+    }
+    div:nth-child(2) {
+      transform: translateX(20px);
+      opacity: 0;
+    }
+    div:last-child {
+      transform: rotate(-45deg);
+      transform-origin: 1px;
+    }
+  }
+  div {
+    transform-origin: 0;
+    background-color: $grey;
+    position: relative;
+    width: 22px;
+    height: 3px;
+    transition: all 0.4s linear;
+  }
+}
+.hamburgerMenuPortal {
+  @media only screen and (min-width: 1201px) {
+    display: none;
+  }
+  position: absolute;
+  background-color: $background;
+  width: 100vw;
+  top: 80px;
+  padding: 0 30px;
+  left: 0;
+  height: 100vh;
+  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  &[dir="rtl"] {
+    transform: translateX(100%);
+  }
+  &[dir="ltr"] {
+    transform: translateX(-100%);
+  }
+  &[is-expanded="true"] {
+    transform: translateX(0);
+  }
+  p {
+    cursor: pointer;
+    padding: 23px 0;
+    width: 100%;
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: bold;
+    border-bottom: 1px dashed $lightGrey;
+  }
+}

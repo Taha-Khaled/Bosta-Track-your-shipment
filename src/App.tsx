@@ -1,25 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import styles from "./App.module.scss";
+import { useTranslation } from "react-i18next";
+import { QueryClient, QueryClientProvider } from "react-query";
+import Navbar from "./components/Navbar/Navbar";
 function App() {
+  const { t, i18n } = useTranslation();
+  const queryClient = new QueryClient();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <div className={styles.app} data-testid="App" dir={i18n.dir()}>
+        <Navbar />
+        <div className={styles.appBody}>
+          <div></div>
+        </div>
+      </div>
+    </QueryClientProvider>
   );
 }
 

@@ -1,0 +1,14 @@
+@import "../../colors";
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  padding: 16px 70px;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  @media only screen and (max-width: 1200px) {
+    padding: 30px 30px 30px 20px;
+  }
+}

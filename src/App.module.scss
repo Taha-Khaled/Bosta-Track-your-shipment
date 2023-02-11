@@ -1,0 +1,14 @@
+.app {
+  .appBody {
+    height: 100vh;
+    margin-top: 68px;
+    @media only screen and (max-width: 1201px) {
+      margin-top: 96px;
+    }
+    overflow: hidden;
+    div {
+      height: inherit;
+      overflow: scroll;
+    }
+  }
+}
