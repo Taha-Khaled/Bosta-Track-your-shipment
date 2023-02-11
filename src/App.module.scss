@@ -6,9 +6,9 @@
       margin-top: 96px;
     }
     overflow: hidden;
-    div {
-      height: inherit;
-      overflow: scroll;
+    .container {
+      height: 100%;
+      overflow: auto;
     }
   }
 }

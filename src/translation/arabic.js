@@ -3,4 +3,6 @@ export const arabic = {
   arabic: "اللغه العربية",
   ar: "عربي",
   enLang: "English",
+  trackingNo: "رقم التتبع",
+  trackShipment: "تتبع شحنتك",
 };
