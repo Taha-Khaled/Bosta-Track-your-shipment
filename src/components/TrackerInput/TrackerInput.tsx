@@ -1,7 +1,21 @@
+import {
+  AllHTMLAttributes,
+  Dispatch,
+  FunctionComponent,
+  SetStateAction,
+} from "react";
 import { useTranslation } from "react-i18next";
 import SearchIcon from "../../assets/SearchIcon";
 import styles from "./TrackerInput.module.scss";
-const TrackerInput = () => {
+interface ITrackerInput extends AllHTMLAttributes<HTMLInputElement> {
+  onSubmit: () => void;
+  setValue: Dispatch<SetStateAction<string>>;
+}
+const TrackerInput: FunctionComponent<ITrackerInput> = ({
+  onSubmit,
+  setValue,
+  ...rest
+}) => {
   const { t, i18n } = useTranslation();
 
   return (
@@ -11,10 +25,12 @@ const TrackerInput = () => {
         <input
           className={styles.input}
           placeholder={t("trackingNo") as string}
+          onChange={(e) => setValue(e.target.value)}
+          {...rest}
         />
         <button
           className={styles.submetBtn}
-          onClick={undefined}
+          onClick={() => onSubmit()}
           dir={i18n.dir()}
         >
           <SearchIcon fontSize={30} />
