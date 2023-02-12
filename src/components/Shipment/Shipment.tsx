@@ -5,6 +5,7 @@ import { IData } from "../../types";
 import EmptyData from "../EmptyData/EmptyData";
 import LoadingSpinner from "../Loader/Loader";
 import ShipmentInfo from "../ShipmentInfo/ShipmentInfo";
+import ShipmentLogs from "../ShipmentLogs/ShipmentLogs";
 import TrackerInput from "../TrackerInput/TrackerInput";
 import styles from "./Shipment.module.scss";
 const Shipment: FunctionComponent = () => {
@@ -23,9 +24,10 @@ const Shipment: FunctionComponent = () => {
         submitOrderNumber={mutateAsync}
       />
       {data ? (
-        <div>
+        <>
           <ShipmentInfo data={data} />
-        </div>
+          <ShipmentLogs data={data} />
+        </>
       ) : (
         <></>
       )}
