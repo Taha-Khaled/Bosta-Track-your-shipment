@@ -6,7 +6,7 @@ import LanguageMenu from "../LanguageMenu/LanguageMenu";
 import styles from "./Navbar.module.scss";
 
 const Navbar: FunctionComponent = () => {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   return (
     <div className={styles.navbar}>

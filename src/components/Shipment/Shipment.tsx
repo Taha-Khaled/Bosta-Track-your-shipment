@@ -1,28 +1,25 @@
 import { FunctionComponent, useState } from "react";
 import { useMutation } from "react-query";
 import { getOrderInfo } from "../../apis";
+import EmptyData from "../EmptyData/EmptyData";
+import LoadingSpinner from "../Loader/Loader";
 import TrackerInput from "../TrackerInput/TrackerInput";
 
 const Shipment: FunctionComponent = () => {
-  const [value, setValue] = useState<string>("");
+  const [orderNumber, setOrderNumber] = useState<string>("");
   const [data, setData] = useState({});
-  const { mutateAsync, isLoading } = useMutation(getOrderInfo, {
+  const { mutateAsync, isLoading, isError } = useMutation(getOrderInfo, {
     onSuccess: ({ data }) => setData(data),
-    onError: (error) => console.log(error),
   });
-  const onSubmit = async () => {
-    await mutateAsync(value);
-    setValue("");
-  };
 
   return (
     <div>
-      {/*isLoading ? <div>loader</div> : <></>*/}
+      {isLoading ? <LoadingSpinner /> : <></>}
       <TrackerInput
-        defaultValue={value}
-        onSubmit={onSubmit}
-        setValue={setValue}
+        setOrderNumber={setOrderNumber}
+        submitOrderNumber={mutateAsync}
       />
+      {isError ? <EmptyData orderNumber={orderNumber} /> : <></>}
     </div>
   );
 };
