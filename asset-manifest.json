@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Bosta-Track-your-shipment/static/css/main.1a458f23.css",
+    "main.js": "/Bosta-Track-your-shipment/static/js/main.98f63d3a.js",
+    "static/js/787.c2e0f42a.chunk.js": "/Bosta-Track-your-shipment/static/js/787.c2e0f42a.chunk.js",
+    "index.html": "/Bosta-Track-your-shipment/index.html",
+    "main.1a458f23.css.map": "/Bosta-Track-your-shipment/static/css/main.1a458f23.css.map",
+    "main.98f63d3a.js.map": "/Bosta-Track-your-shipment/static/js/main.98f63d3a.js.map",
+    "787.c2e0f42a.chunk.js.map": "/Bosta-Track-your-shipment/static/js/787.c2e0f42a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1a458f23.css",
+    "static/js/main.98f63d3a.js"
+  ]
+}
