@@ -1,0 +1,15 @@
+@import "../../colors";
+.infoCard {
+  border: 1px solid $border;
+  border-radius: 10px;
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  line-height: 1.5715;
+  .log {
+    color: $black;
+  }
+  .time {
+    color: $lightGrey;
+  }
+}

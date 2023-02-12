@@ -1,0 +1,71 @@
+@import "../../colors";
+.shipmentLogs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    max-width: 856px;
+    overflow-x: hidden;
+    @media only screen and (max-width: 900px) {
+      padding: 0 30px;
+    }
+    .activityLog {
+      font-size: 14px;
+      line-height: 20px;
+      color: $lightGrey;
+      margin-bottom: 25px;
+    }
+    .listHolder {
+      padding: 0;
+      li:last-child {
+        padding-bottom: 0;
+      }
+      .listItem {
+        list-style: none;
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        padding-bottom: 16px;
+        .marker {
+          height: 100%;
+          .circle {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background-color: $smoke;
+            border-radius: 100%;
+            z-index: 20;
+            outline: 5px solid white;
+          }
+          .border {
+            &[dir="rtl"] {
+              right: 7px;
+            }
+            &[dir="ltr"] {
+              left: 7px;
+            }
+            height: 100%;
+            z-index: 10;
+
+            width: 2px;
+            position: absolute;
+            background-color: $lightBorder;
+          }
+        }
+        .content {
+          margin-inline-start: 30px;
+
+          .timestamp {
+            margin-bottom: 10px;
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+}

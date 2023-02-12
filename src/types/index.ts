@@ -1,6 +1,8 @@
-interface TransitEvent {
+export interface TransitEvent {
   timestamp: Date;
   state: string;
+  reason?: string;
+  hub?: string;
 }
 interface CurrentStatus {
   state: string;

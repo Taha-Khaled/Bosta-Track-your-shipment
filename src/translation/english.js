@@ -12,4 +12,10 @@ export const english = {
   lastUpate: "Last update since",
   dayAgo: "day ago",
   DELIVERED_TO_SENDER: "Returned",
+  activityLog: "ACTIVITY LOG",
+  PACKAGE_RECEIVED: "Package has been Received",
+  IN_TRANSIT: "in transit",
+  NOT_YET_SHIPPED: "not yet Shipped",
+  OUT_FOR_DELIVERY: "out for Delivery",
+  WAITING_FOR_CUSTOMER_ACTION: "Waiting for Customer Action",
 };
